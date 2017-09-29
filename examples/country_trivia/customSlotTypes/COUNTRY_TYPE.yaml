@@ -1,0 +1,81 @@
+# First you need to name the slot type as usual. If you ommit this, this
+# slot would be called EXAMPLE_TYPE You are encouraged to name files based 
+# on the slot type, but it is good practice to keep this in, even if the file
+# is the same name as the slot.
+COUNTRY_TYPE:
+    
+  # This one does not have a colon after it, therefore it will just list
+  # a single string "human" when parsed. In this case, the program will 
+  # use the item as the value and set the id to null.
+  - germany
+
+  # Becomes:
+  # {
+  #   "id": null,
+  #   "name": {
+  #     "value": "germany",
+  #     "synonyms": []
+  #   }
+  # }
+
+
+
+  # This is an example of a item that has a name (value) different than the ID.
+  - usa:
+      name: united states of america
+      synonyms:
+      # These are synonyms for this item.
+        - u. s.
+        - u. s. a.
+        - united states
+
+  # Becomes:
+  # {
+  #   "id": "usa",
+  #   "name": {
+  #     "value": "united states of america",
+  #     "synonyms": [
+  #       "u. s.",
+  #       "u. s. a.",
+  #       "united states"
+  #     ]
+  #   }
+  # }
+
+
+
+  # This is an example of a case where you have an ID that you'd like to use
+  # for that item. By default it will use the ID as the value.
+  - united kingdom:
+    - u. k.
+
+  # Becomes:
+  # {
+  #   "id": "united kingdom",
+  #   "name": {
+  #     "value": "united kingdom",
+  #     "synonyms": [
+  #       "u. k."
+  #     ]
+  #   }
+  # }
+
+
+
+  # This is an example when you have an item that you don't need or want an
+  # id for. In these cases, the value will be set to the first item in the list.
+  # The ID will be set to null.
+  - 
+    - russia
+    - russian federation
+
+  # Becomes:
+  # {
+  #   "id": null,
+  #   "name": {
+  #     "value": "russia",
+  #     "synonyms": [
+  #       "russian federation"
+  #     ]
+  #   }
+  # }
