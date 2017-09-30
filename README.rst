@@ -1,4 +1,5 @@
-# YAMLexa
+YAMLexa
+=======
 
 This is a script I wrote to convert a series of YAML files to a JSON file compatible with the Alexa skills builder.
 
