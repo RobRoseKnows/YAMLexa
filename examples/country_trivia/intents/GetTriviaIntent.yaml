@@ -1,0 +1,12 @@
+intent:
+  name: GetTriviaIntent
+  slots:
+    - name: Country
+      type: $COUNTRY_TYPE
+    - name: Query
+      type: 
+        amazon: $AMAZON.SearchQuery
+        google: 
+  samples:
+    - what is the {Query} of {Country}
+    - what is {Country}'s {Query}
