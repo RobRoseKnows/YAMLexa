@@ -5,6 +5,7 @@
 yakyak: "0.1.0"
 info:
   version: "1.0.0"
+  name: country_trivia
   title: Country Trivia App
   license:
     name: MIT
@@ -12,7 +13,7 @@ intents:
   GetTriviaIntent:
     slots:
       - name: Country
-        type: '$/slots/COUNTRY_TYPE'
+        type: '$/types/COUNTRY_TYPE'
       - name: Query
         type: builtin
         builtin:
@@ -20,7 +21,7 @@ intents:
     samples:
       - what is the {Query} of {Country}
       - what is {Country}'s {Query}
-slots:
+types:
   COUNTRY_TYPE:
     - id: null
       value: germany
